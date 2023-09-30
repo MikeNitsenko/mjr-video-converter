@@ -7,16 +7,8 @@
     "start": "nodemon converter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smpb05/nodejs-videoconverter.git"
-  },
   "author": "Mikhail Nitsenko",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/smpb05/nodejs-videoconverter/issues"
-  },
-  "homepage": "https://github.com/smpb05/nodejs-videoconverter#readme",
   "dependencies": {
     "bull": "^3.28.1",
     "cors": "^2.8.5",
