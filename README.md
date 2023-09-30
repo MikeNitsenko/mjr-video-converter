@@ -1,4 +1,7 @@
-# TSA Videocall Converter
+# MJR Video Converter
+
+## About
+Converts separate MJR (Meetecho Janus Recordings) into single .mp4 file suitable for playback.
 
 ## How to run
 - install latest Node.JS
