@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-videoconverter",
+  "version": "1.0.2",
+  "description": "",
+  "main": "converter.js",
+  "scripts": {
+    "start": "nodemon converter.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smpb05/nodejs-videoconverter.git"
+  },
+  "author": "Mikhail Nitsenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smpb05/nodejs-videoconverter/issues"
+  },
+  "homepage": "https://github.com/smpb05/nodejs-videoconverter#readme",
+  "dependencies": {
+    "bull": "^3.28.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "monitoro": "^0.1.6",
+    "nodemon": "^2.0.12"
+  }
+}
