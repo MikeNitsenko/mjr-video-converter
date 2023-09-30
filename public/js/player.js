@@ -1,7 +1,7 @@
 const playerVersion = '1.12';
-console.log('::: TSA VIDEOCALL PLAYER Version', playerVersion);
+console.log('::: VIDEOCALL PLAYER Version', playerVersion);
 
-const BASE_PATH = 'https://mediakz.hcsbk.kz/converter';
+const BASE_PATH = 'https://example.com/converter';
 const CHECK_INTERVAL_MS = 5000;
 const POSITION_TO_FORCE_CONVERSION = 10;
 
@@ -62,7 +62,7 @@ async function checkJobFile() {
 }
 
 /**
- * Check for video existance at special endpoint.
+ * Check for video existence at special endpoint.
  * Returns quantity of processed files. 
  * If [null] or [undefined] then we don't have files in place yet
  */
@@ -102,7 +102,7 @@ async function checkStatus() {
     if (state === 'active') {
         console.log('Quering status...');
 
-        $("#txtProgressTitle").text(`Обработка видео...`);
+        $("#txtProgressTitle").text(`Video processing...`);
         $("#txtProgressDesc").text(progress);
         $("#txtDontReload").fadeOut(1000);
         $("#txtDontReload").fadeIn(1000);
@@ -121,8 +121,8 @@ async function checkStatus() {
             forceConversion();
         }
 
-        $("#txtProgressTitle").text('Пожалуйста, подождите...');
-        $("#txtProgressDesc").text(`Это видео добавлено в очередь на обработку. Позиция: ${position}`);
+        $("#txtProgressTitle").text('Please wait...');
+        $("#txtProgressDesc").text(`This video has been added to the processing queue. Position: ${position}`);
         $("#txtDontReload").fadeOut(1000);
         $("#txtDontReload").fadeIn(1000);
         setTimeout(checkStatus, CHECK_INTERVAL_MS);
@@ -130,7 +130,7 @@ async function checkStatus() {
     }
 
     if (state === 'failed') {
-        $("#txtProgressTitle").text(`Произошла ошибка`);
+        $("#txtProgressTitle").text(`Error happened`);
         $("#txtProgressDesc").text(progress);
         $("#txtErrorMessage").fadeIn("slow");
         $("#txtErrorMessage").text(reason);
@@ -149,8 +149,8 @@ async function checkStatus() {
  */
 function displayNotFound() {
     console.log('Folder with videos for room:', room, 'was not found');
-    $("#txtProgressTitle").text("Видео отсутствует");
-    $("#txtProgressDesc").text(`Для указанной комнаты [${room}] не найдена директория с файлами`);
+    $("#txtProgressTitle").text("No video available");
+    $("#txtProgressDesc").text(`The file directory was not found for the specified room [${room}]`);
     $("#txtNotFound").fadeIn("slow");
 }
 
@@ -231,11 +231,11 @@ function forceConversion() {
             }).catch((error) => {
                 // Handle the error
                 console.log(error);
-                console.log('Возникла проблема с вашим fetch запросом: ', error.message);
+                console.log('Error happened during fetch request: ', error.message);
                 displayNotFound();
             });
     } catch (error) {
-        console.log('Возникла проблема с вашим fetch запросом: ', error.message);
+        console.log('Error happened: ', error.message);
         displayNotFound();
     }
 }
